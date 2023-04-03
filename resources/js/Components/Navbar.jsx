@@ -7,6 +7,7 @@ import "../styles/css/glightbox.min.css";
 import "../styles/css/style.css";
 
 import { Link } from "@inertiajs/react";
+// const { url } = usePage();
 export default function Navbar() {
     return (
         <>
@@ -22,9 +23,9 @@ export default function Navbar() {
                 <div className="container">
                     <div className="site-navigation">
                         <div className="row">
-                            <div className="col-6 col-lg-3">
+                            <div className="col-6 col-lg-3" >
                                 <Link
-                                    href="index.html"
+                                    href="/"
                                     className="logo m-0 float-start"
                                 >
                                     U&amp;M consulting
@@ -32,19 +33,19 @@ export default function Navbar() {
                             </div>
                             <div className="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
                                 <ul className="js-clone-nav  text-center site-menu p-0 m-0">
-                                    <li className="active">
-                                        <Link href="index.html">Home</Link>
+                                    <li>
+                                        <Link href="/" >Home</Link>
                                     </li>
                                     <li>
-                                        <Link href="about.html">About us</Link>
+                                        <Link href="/about">About us</Link>
                                     </li>
-                                    <li>
-                                        <Link href="services.html">
+                                    <li >
+                                        <Link href="/services">
                                             Services
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link href="blog.html">Blog</Link>
+                                    <li >
+                                        <Link href="/blog">Blog</Link>
                                     </li>
                                     <li className="has-children">
                                         <a href="#">Eng</a>
@@ -60,19 +61,19 @@ export default function Navbar() {
                             <div className="col-6 col-lg-3 text-lg-end">
                                 <ul className="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
                                     <li className="cta-button">
-                                        <Link href="contact.html">
+                                        <Link href="/contact">
                                             Contact Us
                                         </Link>
                                     </li>
                                 </ul>
-                                <a
+                                <Link
                                     href="#"
                                     className="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
                                     data-toggle="collapse"
                                     data-target="#main-navbar"
                                 >
                                     <span />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

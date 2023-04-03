@@ -22,6 +22,8 @@ import { Link, Head } from "@inertiajs/react";
 import Guest from "@/Layouts/GuestLayout";
 
 export default function Welcome(props) {
+    // service =
+
     return (
         <>
             <Guest>
@@ -121,6 +123,8 @@ export default function Welcome(props) {
                         </div>
                     </div>
                 </div>
+
+                {/* Services section */}
                 <div className="section service-section-1">
                     <div className="container">
                         <div className="row">
@@ -148,9 +152,12 @@ export default function Welcome(props) {
                                         data-aos="fade-up"
                                         data-aos-delay={300}
                                     >
-                                        <a href="#" className="btn btn-primary">
+                                        <Link
+                                            href="/service"
+                                            className="btn btn-primary"
+                                        >
                                             View All
-                                        </a>
+                                        </Link>
                                     </p>
                                 </div>
                             </div>
@@ -170,12 +177,19 @@ export default function Welcome(props) {
                                                 />
                                             </span>
                                             <div>
-                                                <h3>Test Preparation</h3>
+                                                <h3>
+                                                    {
+                                                        props.services[0][
+                                                            "en_title"
+                                                        ]
+                                                    }
+                                                </h3>
                                                 <p>
-                                                    We provide coaching and
-                                                    simulations of aptitude and
-                                                    language tests where
-                                                    applicable.
+                                                    {
+                                                        props.services[0][
+                                                            "en_des"
+                                                        ]
+                                                    }
                                                 </p>
                                             </div>
                                         </div>
@@ -194,11 +208,19 @@ export default function Welcome(props) {
                                                 />
                                             </span>
                                             <div>
-                                                <h3>Visa Counsellingg</h3>
+                                                <h3>
+                                                    {
+                                                        props.services[1][
+                                                            "en_title"
+                                                        ]
+                                                    }
+                                                </h3>
                                                 <p>
-                                                    We will follow you up
-                                                    through out your visa
-                                                    application process.
+                                                    {
+                                                        props.services[1][
+                                                            "en_des"
+                                                        ]
+                                                    }
                                                 </p>
                                             </div>
                                         </div>
@@ -217,12 +239,19 @@ export default function Welcome(props) {
                                                 />
                                             </span>
                                             <div>
-                                                <h3>Travel Insurance</h3>
+                                                <h3>
+                                                    {
+                                                        props.services[2][
+                                                            "en_title"
+                                                        ]
+                                                    }
+                                                </h3>
                                                 <p>
-                                                    We have a very strict and
-                                                    good insurance policy which
-                                                    permits our students to
-                                                    travel safely.
+                                                    {
+                                                        props.services[2][
+                                                            "en_des"
+                                                        ]
+                                                    }
                                                 </p>
                                             </div>
                                         </div>
@@ -241,12 +270,19 @@ export default function Welcome(props) {
                                                 />
                                             </span>
                                             <div>
-                                                <h3>Application Processings</h3>
+                                                <h3>
+                                                    {
+                                                        props.services[3][
+                                                            "en_title"
+                                                        ]
+                                                    }
+                                                </h3>
                                                 <p>
-                                                    We help you process your
-                                                    applications. our team will
-                                                    assist you throughout your
-                                                    application process.
+                                                    {
+                                                        props.services[3][
+                                                            "en_des"
+                                                        ]
+                                                    }
                                                 </p>
                                             </div>
                                         </div>
@@ -304,6 +340,7 @@ export default function Welcome(props) {
                     </div>
                 </div>
 
+                {/* Blog  */}
                 <div className="section">
                     <div className="container">
                         <div className="row">
@@ -335,17 +372,12 @@ export default function Welcome(props) {
                                         </span>
                                         <h3>
                                             <Link href="#">
-                                                Far far away, behind the word
-                                                mountains
+                                                {props.blog[0]["en_title"]}
                                             </Link>
                                         </h3>
-                                        <p>
-                                            Vokalia and Consonantia, there live
-                                            the blind texts. Separated they
-                                            live.
-                                        </p>
+                                        <p>{props.blog[0]["en_descr"]}</p>
                                         <Link
-                                            href="single.html"
+                                            href="#"
                                             className="more d-flex align-items-center float-start"
                                         >
                                             <span className="label">
@@ -377,15 +409,10 @@ export default function Welcome(props) {
                                         </span>
                                         <h3>
                                             <Link href="#">
-                                                Far far away, behind the word
-                                                mountains
+                                                {props.blog[1]["en_title"]}
                                             </Link>
                                         </h3>
-                                        <p>
-                                            Vokalia and Consonantia, there live
-                                            the blind texts. Separated they
-                                            live.
-                                        </p>
+                                        <p>{props.blog[1]["en_descr"]}</p>
                                         <Link
                                             href="single.html"
                                             className="more d-flex align-items-center float-start"
@@ -419,17 +446,12 @@ export default function Welcome(props) {
                                         </span>
                                         <h3>
                                             <Link href="#">
-                                                Far far away, behind the word
-                                                mountains
+                                                {props.blog[2]["en_title"]}
                                             </Link>
                                         </h3>
-                                        <p>
-                                            Vokalia and Consonantia, there live
-                                            the blind texts. Separated they
-                                            live.
-                                        </p>
+                                        <p>{props.blog[2]["en_title"]}</p>
                                         <Link
-                                            href="single.html"
+                                            href="#"
                                             className="more d-flex align-items-center float-start"
                                         >
                                             <span className="label">
@@ -461,15 +483,10 @@ export default function Welcome(props) {
                                         </span>
                                         <h3>
                                             <Link href="#">
-                                                Far far away, behind the word
-                                                mountains
+                                                {props.blog[3]["en_title"]}
                                             </Link>
                                         </h3>
-                                        <p>
-                                            Vokalia and Consonantia, there live
-                                            the blind texts. Separated they
-                                            live.
-                                        </p>
+                                        <p>{props.blog[3]["en_title"]}</p>
                                         <Link
                                             href="single.html"
                                             className="more d-flex align-items-center float-start"

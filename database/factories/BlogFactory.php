@@ -19,8 +19,18 @@ class BlogFactory extends Factory
         return [
             'en_title' => fake()->text(),
             'fr_title' => fake()->text(),
-            'en_content' => fake()->text(),
-            'fr_content' => fake()->text(),
+            'author' => fake()->name(),
+            'publishedon' => fake()->text(),
+            'en_descr' => fake()->text(),
+            'fr_descr' => fake()->text(),
+            'en_content_1' => fake()->text(),
+            'fr_content_1' => fake()->text(),
+            'en_content_2' => fake()->text(),
+            'fr_content_2' => fake()->text(),
+            'en_content_3' => fake()->text(),
+            'fr_content_3' => fake()->text(),
+            'en_content_4' => fake()->text(),
+            'fr_content_4' => fake()->text(),
             'img_url' => fake()->text()
 
 

@@ -25,14 +25,14 @@ class HandleInertiaRequests extends Middleware
 
     /**
      * Define the props that are shared by default.
-     *
+     *16
      * @return array<string, mixed>
      */
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
             'auth' => [
-                'user' => $request->user(),
+                'user' => fn() => $request->user() ? $request->user()->only('id', 'name', 'email') : null,
             ],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
