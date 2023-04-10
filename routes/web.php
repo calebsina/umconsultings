@@ -19,13 +19,14 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+    $blog = DB::table('blogs')->orderBy('created_at', 'desc')->limit(4)->get();
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
         'services' => Service::all(),
-        'blog' => Blog::all(),
+        'blog' => $blog,
     ]);
 });
 
@@ -56,7 +57,7 @@ Route::get('/services', function(){
 // blog
 Route::get('/blog', function(){
     return Inertia::render('Blog',[
-        'blog' => Blog::paginate(4),
+        'blog' => Blog::paginate(8),
     ]);
 });
 
@@ -66,8 +67,9 @@ Route::get('/contact', function(){
 });
 
 Route::get('/details/{id}', function($id){
+    $details = Blog::find($id);
     return Inertia::render('Details',[
-        'blogId' => $id,
+        'details' => $details,
     ]);
 });
 

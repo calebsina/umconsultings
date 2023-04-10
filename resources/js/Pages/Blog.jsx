@@ -68,7 +68,7 @@ export default function Blog(props) {
                                     data-aos-delay={100}
                                 >
                                     <div className="media-entry">
-                                        <Link href="/details/"{...item.id}>
+                                        <Link href={`/details/${item.id}`}>
                                             <img
                                                 src={gal_1}
                                                 alt="Image"
@@ -80,13 +80,13 @@ export default function Blog(props) {
                                                 May 14, 2020
                                             </span>
                                             <h3>
-                                                <Link href="/details/"{...item.id}>
+                                                <Link href={`/details/${item.id}`}>
                                                     {item.en_title}
                                                 </Link>
                                             </h3>
                                             <p>{item.en_descr}</p>
                                             <Link
-                                                href="/details/"{...item.id}
+                                                href={`/details/${item.id}`}
                                                 className="more d-flex align-items-center float-start"
                                             >
                                                 <span className="label">
@@ -113,13 +113,9 @@ export default function Blog(props) {
                     data-aos-delay={100}
                 >
                     <ul className="custom-pagination pagination">
-                        <li className="page-item prev">
-                            <Link className="page-link" href="#">
-                                Previous
-                            </Link>
-                        </li>
+                  
                         {props.blog.links.map(items => 
-                             <li key={items.label} className="page-item active">
+                             <li key={items.label} className= 'active page-item' >
                              <Link className="page-link" href={items.url}>
                                  {items.label}
                              </Link>
@@ -127,11 +123,7 @@ export default function Blog(props) {
                             )}
                        
                         
-                        <li className="page-item next">
-                            <Link className="page-link" href="#">
-                                Next
-                            </Link>
-                        </li>
+                   
                     </ul>
                 </nav>
 

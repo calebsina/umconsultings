@@ -353,154 +353,48 @@ export default function Welcome(props) {
                             </div>
                         </div>
                         <div className="row align-items-stretch">
-                            <div
-                                className="col-6 col-sm-6 col-md-6 col-lg-3"
-                                data-aos="fade-up"
-                                data-aos-delay={100}
-                            >
-                                <div className="media-entry">
-                                    <Link href="#">
-                                        <img
-                                            src={gal_1}
-                                            alt="Image"
-                                            className="img-fluid"
-                                        />
-                                    </Link>
-                                    <div className="bg-white m-body">
-                                        <span className="date">
-                                            May 14, 2020
-                                        </span>
-                                        <h3>
-                                            <Link href="#">
-                                                {props.blog[0]["en_title"]}
-                                            </Link>
-                                        </h3>
-                                        <p>{props.blog[0]["en_descr"]}</p>
-                                        <Link
-                                            href="#"
-                                            className="more d-flex align-items-center float-start"
-                                        >
-                                            <span className="label">
-                                                Read More
-                                            </span>
-                                            <span className="arrow">
-                                                <span className="icon-keyboard_arrow_right" />
-                                            </span>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="col-6 col-sm-6 col-md-6 col-lg-3"
-                                data-aos="fade-up"
-                                data-aos-delay={200}
-                            >
-                                <div className="media-entry">
-                                    <Link href="#">
-                                        <img
-                                            src={gal_2}
-                                            alt="Image"
-                                            className="img-fluid"
-                                        />
-                                    </Link>
-                                    <div className="bg-white m-body">
-                                        <span className="date">
-                                            May 14, 2020
-                                        </span>
-                                        <h3>
-                                            <Link href="#">
-                                                {props.blog[1]["en_title"]}
-                                            </Link>
-                                        </h3>
-                                        <p>{props.blog[1]["en_descr"]}</p>
-                                        <Link
-                                            href="single.html"
-                                            className="more d-flex align-items-center float-start"
-                                        >
-                                            <span className="label">
-                                                Read More
-                                            </span>
-                                            <span className="arrow">
-                                                <span className="icon-keyboard_arrow_right" />
-                                            </span>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="col-6 col-sm-6 col-md-6 col-lg-3"
-                                data-aos="fade-up"
-                                data-aos-delay={300}
-                            >
-                                <div className="media-entry">
-                                    <Link href="#">
-                                        <img
-                                            src={gal_3}
-                                            alt="Image"
-                                            className="img-fluid"
-                                        />
-                                    </Link>
-                                    <div className="bg-white m-body">
-                                        <span className="date">
-                                            May 14, 2020
-                                        </span>
-                                        <h3>
-                                            <Link href="#">
-                                                {props.blog[2]["en_title"]}
-                                            </Link>
-                                        </h3>
-                                        <p>{props.blog[2]["en_title"]}</p>
-                                        <Link
-                                            href="#"
-                                            className="more d-flex align-items-center float-start"
-                                        >
-                                            <span className="label">
-                                                Read More
-                                            </span>
-                                            <span className="arrow">
-                                                <span className="icon-keyboard_arrow_right" />
-                                            </span>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="col-6 col-sm-6 col-md-6 col-lg-3"
-                                data-aos="fade-up"
-                                data-aos-delay={400}
-                            >
-                                <div className="media-entry">
-                                    <Link href="#">
-                                        <img
-                                            src={gal_4}
-                                            alt="Image"
-                                            className="img-fluid"
-                                        />
-                                    </Link>
-                                    <div className="bg-white m-body">
-                                        <span className="date">
-                                            May 14, 2020
-                                        </span>
-                                        <h3>
-                                            <Link href="#">
-                                                {props.blog[3]["en_title"]}
-                                            </Link>
-                                        </h3>
-                                        <p>{props.blog[3]["en_title"]}</p>
-                                        <Link
-                                            href="single.html"
-                                            className="more d-flex align-items-center float-start"
-                                        >
-                                            <span className="label">
-                                                Read More
-                                            </span>
-                                            <span className="arrow">
-                                                <span className="icon-keyboard_arrow_right" />
-                                            </span>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
+                            {props.blog.map((item) =>
+                                 <div key={item.id}
+                                 className="col-6 col-sm-6 col-md-6 col-lg-3"
+                                 data-aos="fade-up"
+                                 data-aos-delay={100}
+                             >
+                                 <div className="media-entry">
+                                     <Link href="#">
+                                         <img
+                                             src={gal_1}
+                                             alt="Image"
+                                             className="img-fluid"
+                                         />
+                                     </Link>
+                                     <div className="bg-white m-body">
+                                         <span className="date">
+                                             May 14, 2020
+                                         </span>
+                                         <h3>
+                                             <Link href={`/details/${item.id}`}>
+                                                 {item.en_title}
+                                             </Link>
+                                         </h3>
+                                         <p>{item.en_des}</p>
+                                         <Link
+                                             href={`/details/${item.id}`}
+                                             className="more d-flex align-items-center float-start"
+                                         >
+                                             <span className="label">
+                                                 Read More
+                                             </span>
+                                             <span className="arrow">
+                                                 <span className="icon-keyboard_arrow_right" />
+                                             </span>
+                                         </Link>
+                                     </div>
+                                 </div>
+                             </div>
+                            )}
+                           
+                         
+                     
                         </div>
                     </div>
                 </div>
