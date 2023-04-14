@@ -45,10 +45,10 @@ export default function Navbar() {
                                         </Link>
                                     </li>
                                     <li >
-                                        <Link href="/blog">Blog</Link>
+                                        <Link href="/blogs">Blog</Link>
                                     </li>
                                     <li className="has-children">
-                                        <a href="#">Eng</a>
+                                        <Link href="#">Eng</Link>
                                         <ul className="dropdown">
                                             <li>
                                                 <Link href="#">Fre</Link>

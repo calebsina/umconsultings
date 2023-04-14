@@ -1,3 +1,14 @@
+import "../styles/admin/vendors/mdi/css/materialdesignicons.min.css";
+import "../styles/admin/vendors/css/vendor.bundle.base.css";
+import "../styles/admin/css/style.css";
+
+// import "../styles/admin/vendors/js/vendor.bundle.base.js";
+// import "../styles/admin/js/off-canvas.js";
+// import "../styles/admin/js/hoverable-collapse.js";
+// import "../styles/admin/js/misc.js";
+
+
+
 import { forwardRef, useEffect, useRef } from 'react';
 
 export default forwardRef(function TextInput({ type = 'text', className = '', isFocused = false, ...props }, ref) {

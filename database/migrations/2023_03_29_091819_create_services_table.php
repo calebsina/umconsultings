@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('fr_title');
             $table->string('en_des');
             $table->string('fr_des');
+            $table->string('service_icon');
             $table->timestamps();
         });
     }

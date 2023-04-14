@@ -23,6 +23,7 @@ class ServiceFactory extends Factory
             'fr_title' => fake()->text(),
             'en_des' => fake()->text(),
             'fr_des' => fake()->text(),
+            'service_icon' => fake()->text(),
         ];
     }
 }

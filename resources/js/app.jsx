@@ -1,5 +1,5 @@
 import './bootstrap';
-import '../css/app.css';
+// import '../css/app.css';
 
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
@@ -12,9 +12,9 @@ createInertiaApp({
     resolve: (name) => resolvePageComponent(`./Pages/${name}.jsx`, 
     import.meta.glob([
         './Pages/**/*.jsx',
-        '../images/**',
-        '../fonts/**',
-        '../javascript/**',
+        // '../images/**',
+        // '../fonts/**',
+        // '../javascript/**',
 
     ])),
     setup({ el, App, props }) {
