@@ -46,7 +46,7 @@ export default function Dashboard(props) {
                                             className="nav-link"
                                             id="business-tab"
                                             data-toggle="tab"
-                                            href='/adminblog'
+                                            href="/adminblog"
                                             role="tab"
                                             aria-selected="false"
                                         >
@@ -228,29 +228,48 @@ export default function Dashboard(props) {
                                                     <td>{item.publishedon}</td>
                                                     <td>{item.author}</td>
                                                     <td>
-                                                        <Link as="button" className="btn btn-gradient-dark btn-icon-text"  href={`/adminblog/${item.id}`}>
-                                                        Edit <i className="mdi mdi-file-check btn-icon-append"></i>
+                                                        <Link
+                                                            as="button"
+                                                            className="btn btn-gradient-dark btn-icon-text"
+                                                            href={`/adminblog/${item.id}`}
+                                                        >
+                                                            Edit{" "}
+                                                            <i className="mdi mdi-file-check btn-icon-append"></i>
                                                         </Link>
-                                                        <Link  className="btn btn-success btn-icon-text" method="delete" as="button" href={`/blogcreate/${item.id}`}>
-                                                        <i className="mdi mdi-alert btn-icon-prepend"></i> Delete 
+                                                        <Link
+                                                            className="btn btn-success btn-icon-text"
+                                                            method="delete"
+                                                            as="button"
+                                                            href={`/blogcreate/${item.id}`}
+                                                        >
+                                                            <i className="mdi mdi-alert btn-icon-prepend"></i>{" "}
+                                                            Delete
                                                         </Link>
                                                     </td>
                                                 </tr>
                                             ))}
                                         </tbody>
                                     </table>
-                                    
-                        <div className="btn-group" role="group" aria-label="Basic example">
-                            {props.blog.links.map((items) => 
-                                <Link preserveScroll as="button" key={items.label} href={items.url} className="btn btn-outline-secondary">{items.label}</Link>
 
-                            )}
-                           
-                          </div>
-                             
-                           
+                                    <div
+                                        className="btn-group"
+                                        role="group"
+                                        aria-label="Basic example"
+                                    >
+                                        {props.blog.links.map((items) => (
+                                            <Link
+                                                preserveScroll
+                                                as="button"
+                                                key={items.label}
+                                                href={items.url}
+                                                className="btn btn-outline-secondary"
+                                            >
+                                                {items.label}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
-                         
+
                                 <Link
                                     as="button"
                                     href="/adminblog"
@@ -303,6 +322,76 @@ export default function Dashboard(props) {
                                 >
                                     View All
                                 </button>
+                            </div>
+                        </div>
+                        <div className="col-lg-12 grid-margin stretch-card">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h4 className="card-title">
+                                        View Services
+                                    </h4>
+                                    <p className="card-description">
+                                        {" "}
+                                        Add class <code>.table-striped</code>
+                                    </p>
+                                    <table className="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th> Id </th>
+                                                <th>Title </th>
+                                                <th> Action </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {props.service.data.map((item) => (
+                                                <tr key={item.id}>
+                                                    <td className="py-1">
+                                                        {item.id}
+                                                    </td>
+                                                    <td> item.en_title</td>
+                                                    <td>
+                                                        <Link
+                                                            preserveScroll
+                                                            as="button"
+                                                            className="btn btn-gradient-dark btn-icon-text"
+                                                            href={`/adminservice/${item.id}`}
+                                                        >
+                                                            Edit{" "}
+                                                            <i className="mdi mdi-file-check btn-icon-append"></i>
+                                                        </Link>
+                                                        <Link
+                                                            preserveScroll
+                                                            className="btn btn-success btn-icon-text"
+                                                            method="delete"
+                                                            as="button"
+                                                            href={`/adminservice/${item.id}`}
+                                                        >
+                                                            <i className="mdi mdi-alert btn-icon-prepend"></i>{" "}
+                                                            Delete
+                                                        </Link>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                    <div
+                                        className="btn-group"
+                                        role="group"
+                                        aria-label="Basic example"
+                                    >
+                                        {props.service.links.map((items) => (
+                                            <Link
+                                                preserveScroll
+                                                as="button"
+                                                key={items.label}
+                                                href={items.url}
+                                                className="btn btn-outline-secondary"
+                                            >
+                                                {items.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

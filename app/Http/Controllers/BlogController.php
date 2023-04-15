@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\BlogCreateRequest;
 use Illuminate\Validation\Rules\File;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Blog;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Response;
@@ -56,12 +57,9 @@ class BlogController extends Controller
                 'required', 
                 ]
         ]);
-        // dd($request);
         $file = $request->file('img_url');
-        // dd($file);
-        $tempPath = $file->store('blog');
-        $finalPath = 'storage/' . $file->getClientOriginalName();
-        move_uploaded_file($tempPath, $finalPath);
+        $finalPath = 'blog/' . $file->getClientOriginalName();
+        $tempPath = $file->storeAs('public/', $finalPath);
     
         // $fileModel = new File();
         // $fileModel->path = $finalPath;
@@ -74,7 +72,7 @@ class BlogController extends Controller
             'en_content_2' => $request->en_content_2,
             'en_content_3' => $request->en_content_3,
             'en_content_4' => $request->en_content_4,
-            'img_url' => $tempPath,
+            'img_url' => $finalPath,
         ]);
         return Redirect::route('dashboard');
 
@@ -116,11 +114,10 @@ class BlogController extends Controller
 
         if($request->hasFile('img_url')){
             $file = $request->file('img_url');
-            $tempPath = $file->store('blog');
-            $finalPath = 'storage/' . $file->getClientOriginalName();
-            move_uploaded_file($tempPath, $finalPath);
+            $finalPath = 'blog/' . $file->getClientOriginalName();
+            $tempPath = $file->storeAs('public/', $finalPath);
             $blog = Blog::where('id', $id)->update([
-            'img_url' => $tempPath,
+            'img_url' => $finalPath,
 
             ]);
         }

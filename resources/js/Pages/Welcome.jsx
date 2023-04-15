@@ -1,28 +1,18 @@
 import hero_1 from "../styles/images/hero_1.jpg";
 import img_v_2 from "../styles/images/img_v_2.jpg";
 import svg01 from "../styles/images/svg/01.svg";
-import svg02 from "../styles/images/svg/02.svg";
-import svg03 from "../styles/images/svg/03.svg";
-import svg04 from "../styles/images/svg/04.svg";
 import img_v_1 from "../styles/images/img_v_1.jpg";
-import gal_1 from "../styles/images/gal_1.jpg";
-import gal_2 from "../styles/images/gal_2.jpg";
-import gal_3 from "../styles/images/gal_3.jpg";
-import gal_4 from "../styles/images/gal_4.jpg";
-import gal_5 from "../styles/images/gal_5.jpg";
-import gal_6 from "../styles/images/gal_6.jpg";
 
-// import img5 from "../styles/images/img-5.jpg";
-// import img6 from "../styles/images/img-6.jpg";
-// import img7 from "../styles/images/img-7.jpg";
 
 import img_1 from "../styles/images/img_1.jpg";
 
-import { Link, Head } from "@inertiajs/react";
+import { Link, Head, usePage } from "@inertiajs/react";
+// import {assert} from "@inertiajs/react";
 import Guest from "@/Layouts/GuestLayout";
 
 export default function Welcome(props) {
-    // service =
+    const local = usePage().props.locale === 'fr';
+
 
     return (
         <>
@@ -36,12 +26,10 @@ export default function Welcome(props) {
                         <div className="row align-items-center justify-content-start">
                             <div className="col-lg-5">
                                 <h1 className="heading" data-aos="fade-up">
-                                    It's a Big World Out There, Go Explore
+                                    {props.translations.welcome}
                                 </h1>
                                 <p className="mb-5" data-aos="fade-up">
-                                    We match student abilities, performance, and
-                                    desires with the best possible career
-                                    options. .
+                                    {props.translations.welcome2}
                                 </p>
                                 <div data-aos="fade-up">
                                     <Link
@@ -97,17 +85,13 @@ export default function Welcome(props) {
                                         data-aos="fade-up"
                                         data-aos-delay={100}
                                     >
-                                        Explore All Corners of The World With Us
+                                       {props.translations.explore}
                                     </h2>
                                     <p data-aos="fade-up" data-aos-delay={200}>
-                                        The number one in providing one-stop
-                                        study abroad solutions for students.
+                                        {props.translations.explore_des_1}
                                     </p>
                                     <p data-aos="fade-up" data-aos-delay={300}>
-                                        help them achieve their goals through
-                                        proper career counseling &amp; guidance,
-                                        to add value for our partner
-                                        institutions and stakeholders.
+                                        {props.translations.explore_des_2}
                                     </p>
                                     <p
                                         className="my-4"
@@ -115,7 +99,7 @@ export default function Welcome(props) {
                                         data-aos-delay={300}
                                     >
                                         <a href="#" className="btn btn-primary">
-                                            Read more
+                                        {props.translations.read}
                                         </a>
                                     </p>
                                 </div>
@@ -134,18 +118,13 @@ export default function Welcome(props) {
                                     data-aos="fade-up"
                                 >
                                     <h2>
-                                        Our{" "}
+                                        {/* Our{" "} */}
                                         <span className="d-block">
-                                            Services
+                                            {props.translations.services}
                                         </span>
                                     </h2>
                                     <p>
-                                        To be the number one in providing
-                                        one-stop study abroad solutions for
-                                        students and help them achieve their
-                                        goals through proper career counseling
-                                        &amp; guidance, to add value for our
-                                        partner institutions and stakeholders.
+                                        {props.translations.services_des}
                                     </p>
                                     <p
                                         className="my-4"
@@ -153,7 +132,7 @@ export default function Welcome(props) {
                                         data-aos-delay={300}
                                     >
                                         <Link
-                                            href="/service"
+                                            href="/services"
                                             className="btn btn-primary"
                                         >
                                             View All
@@ -163,7 +142,9 @@ export default function Welcome(props) {
                             </div>
                             <div className="col-lg-9">
                                 <div className="row">
-                                    <div
+                                    {props.services.map((item) =>
+                                        <div
+                                        key={item.id}
                                         className="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0"
                                         data-aos="fade-up"
                                         data-aos-delay={100}
@@ -179,114 +160,21 @@ export default function Welcome(props) {
                                             <div>
                                                 <h3>
                                                     {
-                                                        props.services[0][
-                                                            "en_title"
-                                                        ]
+                                                        local ?  `${item.fr_title}` : `${item.en_title}`
+                                                    
                                                     }
                                                 </h3>
                                                 <p>
                                                     {
-                                                        props.services[0][
-                                                            "en_des"
-                                                        ]
+                                                        local ?  `${item.fr_des}` : `${item.en_des}`
+                                                    
                                                     }
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        className="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0"
-                                        data-aos="fade-up"
-                                        data-aos-delay={200}
-                                    >
-                                        <div className="service-1">
-                                            <span className="icon">
-                                                <img
-                                                    src={svg02}
-                                                    alt="Image"
-                                                    className="img-fluid"
-                                                />
-                                            </span>
-                                            <div>
-                                                <h3>
-                                                    {
-                                                        props.services[1][
-                                                            "en_title"
-                                                        ]
-                                                    }
-                                                </h3>
-                                                <p>
-                                                    {
-                                                        props.services[1][
-                                                            "en_des"
-                                                        ]
-                                                    }
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        className="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0"
-                                        data-aos="fade-up"
-                                        data-aos-delay={300}
-                                    >
-                                        <div className="service-1">
-                                            <span className="icon">
-                                                <img
-                                                    src={svg03}
-                                                    alt="Image"
-                                                    className="img-fluid"
-                                                />
-                                            </span>
-                                            <div>
-                                                <h3>
-                                                    {
-                                                        props.services[2][
-                                                            "en_title"
-                                                        ]
-                                                    }
-                                                </h3>
-                                                <p>
-                                                    {
-                                                        props.services[2][
-                                                            "en_des"
-                                                        ]
-                                                    }
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        className="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0"
-                                        data-aos="fade-up"
-                                        data-aos-delay={400}
-                                    >
-                                        <div className="service-1">
-                                            <span className="icon">
-                                                <img
-                                                    src={svg04}
-                                                    alt="Image"
-                                                    className="img-fluid"
-                                                />
-                                            </span>
-                                            <div>
-                                                <h3>
-                                                    {
-                                                        props.services[3][
-                                                            "en_title"
-                                                        ]
-                                                    }
-                                                </h3>
-                                                <p>
-                                                    {
-                                                        props.services[3][
-                                                            "en_des"
-                                                        ]
-                                                    }
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    )}
+
                                 </div>
                             </div>
                         </div>
@@ -312,19 +200,13 @@ export default function Welcome(props) {
                                 data-aos-delay={100}
                             >
                                 <h2 className="heading mb-4">
-                                    Our Mission, Our Goals
+                                    {props.translations.goal}
                                 </h2>
                                 <p>
-                                    To match the student’s abilities,
-                                    performance, and desires with the best
-                                    possible career options, To provide
-                                    customized solutions to the students
-                                    aspiring to study overseas,
+                                    {props.translations.goal_1}
                                 </p>
                                 <p>
-                                    Strive for the organic growth of our
-                                    organization through integrity, honesty,
-                                    transparency and excellence.
+                                    {props.translations.goal_2}
                                 </p>
                                 <p
                                     className="my-4"
@@ -332,7 +214,7 @@ export default function Welcome(props) {
                                     data-aos-delay={200}
                                 >
                                     <Link href="#" className="btn btn-primary">
-                                        Read more
+                                        {props.translations.read}
                                     </Link>
                                 </p>
                             </div>
@@ -362,27 +244,30 @@ export default function Welcome(props) {
                                  <div className="media-entry">
                                      <Link href="#">
                                          <img
-                                             src={gal_1}
+                                         style={{height: "250px", width: "350px"}}
+                                             src={(`http://127.0.0.1:8000/storage/${item.img_url}`)}
                                              alt="Image"
                                              className="img-fluid"
                                          />
                                      </Link>
                                      <div className="bg-white m-body">
                                          <span className="date">
-                                             May 14, 2020
+                                             {item.author}
                                          </span>
                                          <h3>
                                              <Link href={`/details/${item.id}`}>
-                                                 {item.en_title}
+                                                 {
+                                                 item.en_title
+                                                 }
                                              </Link>
                                          </h3>
-                                         <p>{item.en_des}</p>
+                                         <p>{item.en_descr}</p>
                                          <Link
                                              href={`/details/${item.id}`}
                                              className="more d-flex align-items-center float-start"
                                          >
                                              <span className="label">
-                                                 Read More
+                                                 {props.translations.read}
                                              </span>
                                              <span className="arrow">
                                                  <span className="icon-keyboard_arrow_right" />
@@ -415,7 +300,7 @@ export default function Welcome(props) {
                                 data-aos-delay={100}
                             >
                                 <h2 className="heading mb-5">
-                                    Frequently Asked <br /> Questions
+                                {props.translations.quest}<br /> 
                                 </h2>
                                 <div
                                     className="custom-accordion"

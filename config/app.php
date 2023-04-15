@@ -83,6 +83,9 @@ return [
     */
 
     'locale' => 'en',
+    'app' => [
+        'locales' => ['en', 'fr'],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -185,6 +188,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -210,6 +214,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
     ])->toArray(),
 
 ];

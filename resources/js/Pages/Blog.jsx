@@ -69,11 +69,12 @@ export default function Blog(props) {
                                 >
                                     <div className="media-entry">
                                         <Link href={`/details/${item.id}`}>
-                                            <img
-                                                src={gal_1}
-                                                alt="Image"
-                                                className="img-fluid"
-                                            />
+                                        <img
+                                         style={{height: "250px", width: "350px"}}
+                                             src={(`http://127.0.0.1:8000/storage/${item.img_url}`)}
+                                             alt="Image"
+                                             className="img-fluid"
+                                         />
                                         </Link>
                                         <div className="bg-white m-body">
                                             <span className="date">

@@ -72,19 +72,19 @@ export default function Footer(){
                 <h3>Links</h3>
                 <ul className="list-unstyled float-left links">
                   <li>
-                    <Link href="#">About us</Link>
+                    <Link href="/about">About us</Link>
                   </li>
                   <li>
-                    <Link href="#">Services</Link>
+                    <Link href="/services">Services</Link>
                   </li>
                   <li>
-                    <Link href="#">News</Link>
+                    <Link href="/blog">News</Link>
                   </li>
                   <li>
                     <Link href="#">Careers</Link>
                   </li>
                   <li>
-                    <Link href="#">Contact</Link>
+                    <Link href="/contact">Contact</Link>
                   </li>
                 </ul>
               </div>{" "}
@@ -96,19 +96,19 @@ export default function Footer(){
                 <h3>Company</h3>
                 <ul className="list-unstyled float-left links">
                   <li>
-                    <Link href="#">About us</Link>
+                    <Link href="/about">About us</Link>
                   </li>
                   <li>
-                    <Link href="#">Services</Link>
+                    <Link href="/services">Services</Link>
                   </li>
                   <li>
-                    <Link href="#">News</Link>
+                    <Link href="/blog">News</Link>
                   </li>
                   <li>
                     <Link href="#">Careers</Link>
                   </li>
                   <li>
-                    <Link href="#">Contact</Link>
+                    <Link href="/contact">Contact</Link>
                   </li>
                 </ul>
               </div>{" "}

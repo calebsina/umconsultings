@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Contact extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'en_title',
-        'fr_title',
-        'en_des',
-        'fr_des',
-        'service_icon'
+        'contact_1',
+        'contact_2',
+        'email',
+        'fbk',
+        'ins',
+        'lkn'
     ];
 }

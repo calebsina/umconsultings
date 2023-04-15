@@ -18,11 +18,11 @@ export default function Details(props) {
                             <div className="col-lg-6 mx-auto text-center">
                                 <p>
                                     By <a href="#">{props.details.author}</a> on{" "}
-                                    {props.details.created_at}
-                                    <a href="#">Feb 27, 2022</a>
+                                    {/* {props.details.created_at} */}
+                                    <a href="#">{props.details.publishedon}</a>
                                 </p>
                                 <h1 className="heading" data-aos="fade-up">
-                                    {props.details.title}
+                                    {props.details.en_title}
                                 </h1>
                                 <p data-aos="fade-up">
                                     {props.details.en_descr}

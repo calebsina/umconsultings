@@ -6,9 +6,14 @@ import "../styles/css/flatpickr.min.css";
 import "../styles/css/glightbox.min.css";
 import "../styles/css/style.css";
 
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
+
 // const { url } = usePage();
-export default function Navbar() {
+export default function Navbar(props) {
+
+    const local = usePage().props.locale === 'fr';
+    const lang = usePage().props.locale;
+
     return (
         <>
             <div className="site-mobile-menu site-navbar-target">
@@ -34,24 +39,30 @@ export default function Navbar() {
                             <div className="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
                                 <ul className="js-clone-nav  text-center site-menu p-0 m-0">
                                     <li>
-                                        <Link href="/" >Home</Link>
+                                        <Link href={`/${lang}/`} >{local ? 'Acceuil' : 'Home'}</Link>
                                     </li>
                                     <li>
-                                        <Link href="/about">About us</Link>
+                                        <Link href={`/${lang}/about`}>{local ? 'À propos' : 'About Us'}</Link>
                                     </li>
                                     <li >
-                                        <Link href="/services">
-                                            Services
+                                        <Link href={`/${lang}/services`}>
+                                        {local ? 'services' : 'services'}
                                         </Link>
                                     </li>
                                     <li >
-                                        <Link href="/blogs">Blog</Link>
+                                        <Link href={`/${lang}/blogs`}>{local ? 'Blog' : 'Blog'}</Link>
                                     </li>
+
+                                    {/* <select className="has-children">
+                                    <option><Link href="/lang/en">English</Link></option>
+                                    <option><Link href="/lang/fr">Francais</Link></option>
+                                    </select> */}
+                                    
                                     <li className="has-children">
-                                        <Link href="#">Eng</Link>
+                                        <Link href="/lang/en">English</Link>
                                         <ul className="dropdown">
                                             <li>
-                                                <Link href="#">Fre</Link>
+                                                <Link href="/lang/fr">Francais</Link>
                                             </li>
                                         </ul>
                                     </li>
@@ -61,7 +72,7 @@ export default function Navbar() {
                             <div className="col-6 col-lg-3 text-lg-end">
                                 <ul className="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
                                     <li className="cta-button">
-                                        <Link href="/contact">
+                                        <Link href={`/${lang}/contact`}>
                                             Contact Us
                                         </Link>
                                     </li>

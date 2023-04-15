@@ -22,10 +22,7 @@ export default function About(props) {
                                     About Us
                                 </h1>
                                 <p className="mb-5" data-aos="fade-up">
-                                    we are the number one in providing one-stop
-                                    study abroad solutions for students and help
-                                    them achieve their goals through proper
-                                    career counseling &amp; guidance.
+                                    {props.translations.about_us}
                                 </p>
                                 <div data-aos="fade-up">
                                     <Link
@@ -81,17 +78,13 @@ export default function About(props) {
                                         data-aos="fade-up"
                                         data-aos-delay={100}
                                     >
-                                        Explore All Corners of The World With Us
+                                        {props.translations.explore}
                                     </h2>
                                     <p data-aos="fade-up" data-aos-delay={200}>
-                                        The number one in providing one-stop
-                                        study abroad solutions for students.
+                                        {props.translations.explore_des_1}
                                     </p>
                                     <p data-aos="fade-up" data-aos-delay={300}>
-                                        help them achieve their goals through
-                                        proper career counseling &amp; guidance,
-                                        to add value for our partner
-                                        institutions and stakeholders.
+                                       {props.translations.about_us}
                                     </p>
                                     <p
                                         className="my-4"
@@ -99,7 +92,7 @@ export default function About(props) {
                                         data-aos-delay={300}
                                     >
                                         <a href="#" className="btn btn-primary">
-                                            Read more
+                                            {props.translations.read}
                                         </a>
                                     </p>
                                 </div>
@@ -107,7 +100,7 @@ export default function About(props) {
                         </div>
                     </div>
                 </div>
-
+{/* 
                 <div className="section">
                     <div className="container">
                         <div className="row mb-5">
@@ -202,7 +195,7 @@ export default function About(props) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </Guest>
         </>
     );

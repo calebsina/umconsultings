@@ -4,10 +4,12 @@ import svg02 from "../styles/images/svg/02.svg";
 import svg03 from "../styles/images/svg/03.svg";
 import svg04 from "../styles/images/svg/04.svg";
 
-import { Link, Head } from "@inertiajs/react";
+import { Link, Head, usePage } from "@inertiajs/react";
 import Guest from "@/Layouts/GuestLayout";
 
 export default function Services(props) {
+    const local = usePage().props.locale === 'fr';
+
     return (
         <>
             <Guest>
@@ -22,9 +24,7 @@ export default function Services(props) {
                                     Services
                                 </h1>
                                 <p className="mb-5" data-aos="fade-up">
-                                    We match student’s abilities, performance,
-                                    and desires with the best possible career
-                                    options.
+                                    {props.translations.welcome2}
                                 </p>
                                 <div data-aos="fade-up">
                                     <Link
@@ -60,12 +60,7 @@ export default function Services(props) {
                                         </span>
                                     </h2>
                                     <p>
-                                        To be the number one in providing
-                                        one-stop study abroad solutions for
-                                        students and help them achieve their
-                                        goals through proper career counseling
-                                        &amp; guidance, to add value for our
-                                        partner institutions and stakeholders.
+                                        {props.translations.services_des}
                                     </p>
                                     <p
                                         className="my-4"
@@ -99,8 +94,14 @@ export default function Services(props) {
                                                     />
                                                 </span>
                                                 <div>
-                                                    <h3>{item.en_title}</h3>
-                                                    <p>{item.en_des}</p>
+                                                    <h3>{
+                                                        local ? `${item.fr_title}` : `${item.en_title}`
+                                                    
+                                                    }</h3>
+                                                    <p>{
+                                                        local ? `${item.fr_des}` : `${item.en_des}`
+
+                                                    }</p>
                                                 </div>
                                             </div>
                                         </div>

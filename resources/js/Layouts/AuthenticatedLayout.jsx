@@ -343,7 +343,7 @@ export default function Authenticated({ auth, header, children }) {
                                     </span>
                                 </Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link
                                     className="nav-link"
                                     href="#"
@@ -355,9 +355,9 @@ export default function Authenticated({ auth, header, children }) {
                                         Home Page
                                     </span>
                                 </Link>
-                            </li>
+                            </li> */}
                             <li className="nav-item">
-                                <Link className="nav-link" href="#">
+                                <Link className="nav-link" href="/adminservice">
                                     <span className="icon-bg">
                                         <i className="mdi mdi-cube menu-icon" />
                                     </span>
@@ -366,16 +366,7 @@ export default function Authenticated({ auth, header, children }) {
                                     </span>
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#">
-                                    <span className="icon-bg">
-                                        <i className="mdi mdi-cube menu-icon" />
-                                    </span>
-                                    <span className="menu-title">
-                                    Schools
-                                    </span>
-                                </Link>
-                            </li>
+                     
                             <li className="nav-item">
                                 <Link className="nav-link" href="#">
                                     <span className="icon-bg">
@@ -398,7 +389,7 @@ export default function Authenticated({ auth, header, children }) {
                             <li className="nav-item">
                                 <Link
                                     className="nav-link"
-                                    href='#'
+                                    href="/contact/1"
                                 >
                                     <span className="icon-bg">
                                         <i className="mdi mdi-chart-bar menu-icon" />

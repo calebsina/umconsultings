@@ -2,7 +2,7 @@ import { Link, Head } from "@inertiajs/react";
 import Guest from "@/Layouts/GuestLayout";
 import hero_2 from "../styles/images/hero_2.jpg";
 
-export default function Blog() {
+export default function Contact(props) {
     return (
         <>
             <Guest>
@@ -14,12 +14,10 @@ export default function Blog() {
                         <div className="row align-items-center justify-content-start">
                             <div className="col-lg-6 mx-auto text-center">
                                 <h1 className="heading" data-aos="fade-up">
-                                    Contact
+                                    {props.translations.contact}
                                 </h1>
                                 <p data-aos="fade-up">
-                                    We match student’s abilities, performance,
-                                    and desires with the best possible career
-                                    options.
+                                    {props.translations.welcome2}
                                 </p>
                             </div>
                         </div>
@@ -33,7 +31,7 @@ export default function Blog() {
                                 data-aos="fade-up"
                                 data-aos-delay={0}
                             >
-                                <h2 className="heading mb-5">Get In Touch</h2>
+                                <h2 className="heading mb-5">{props.translations.contact}</h2>
                             </div>
                         </div>
                         <div className="row">
@@ -46,7 +44,7 @@ export default function Blog() {
                                     <div className="address mt-4">
                                         <i className="icon-room" />
                                         <h4 className="mb-2">Location:</h4>
-                                        <p>Bamenda, Commercial Avenue</p>
+                                        <p>{props.contact[0].contact_1}</p>
                                     </div>
                                     <div className="open-hours mt-4">
                                         <i className="icon-clock-o" />
@@ -60,12 +58,12 @@ export default function Blog() {
                                     <div className="email mt-4">
                                         <i className="icon-envelope" />
                                         <h4 className="mb-2">Email:</h4>
-                                        <p>info@</p>
+                                        <p>{props.contact[0].email}</p>
                                     </div>
                                     <div className="phone mt-4">
                                         <i className="icon-phone" />
                                         <h4 className="mb-2">Call:</h4>
-                                        <p>+237 679 646 336</p>
+                                        <p>{props.contact[0].contact_2}</p>
                                     </div>
                                 </div>
                             </div>
