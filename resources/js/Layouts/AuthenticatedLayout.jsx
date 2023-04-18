@@ -400,7 +400,7 @@ export default function Authenticated({ auth, header, children }) {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" href="#">
+                                <Link className="nav-link" href="/event/1">
                                     <span className="icon-bg">
                                         <i className="mdi mdi-format-list-bulleted menu-icon" />
                                     </span>

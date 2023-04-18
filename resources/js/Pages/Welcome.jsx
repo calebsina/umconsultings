@@ -449,15 +449,15 @@ export default function Welcome(props) {
                         <div className="row">
                             <div className="col-lg-7 text-center mb-3 mb-lg-0 text-lg-start">
                                 <h3 className="text-white m-0">
-                                    Begin your adventurous journey here.
+                                  Up comming events  {props.events[0].event_name}
                                 </h3>
                             </div>
                             <div className="col-lg-5 text-center text-lg-end">
                                 <Link
-                                    href="#"
+                                    href={`https://${props.events[0].form_link}`}
                                     className="btn btn-outline-white"
                                 >
-                                    Get started
+                                   Get Started
                                 </Link>
                             </div>
                         </div>

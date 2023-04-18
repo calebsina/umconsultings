@@ -54,154 +54,12 @@ export default function Details(props) {
                                         <a href="#">#trends</a>
                                     </p>
                                 </div>
-                                <div className="pt-5">
-                                    <h3 className="mb-5">6 Comments</h3>
-                                    <ul className="comment-list">
-                                        <li className="comment">
-                                            <div className="vcard bio">
-                                                <img
-                                                    src={gal_1}
-                                                    alt="comment section"
-                                                />
-                                            </div>
-                                            <div className="comment-body">
-                                                <h3>Jacob Smith</h3>
-                                                <div className="meta">
-                                                    January 9, 2018 at 2:21pm
-                                                </div>
-                                                <p>
-                                                    When she reached the first
-                                                    hills of the Italic
-                                                    Mountains, she had a last
-                                                    view back on the skyline of
-                                                    her hometown Bookmarksgrove,
-                                                    the headline of Alphabet
-                                                    Village and the subline of
-                                                    her own road, the Line Lane.
-                                                    Pityful a rethoric question
-                                                    ran over her cheek, then she
-                                                    continued her way.
-                                                </p>
-                                                <p>
-                                                    <a
-                                                        href="#"
-                                                        className="reply"
-                                                    >
-                                                        Reply
-                                                    </a>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li className="comment">
-                                            <div className="vcard bio">
-                                                <img
-                                                    src={person_1}
-                                                    alt="comment"
-                                                />
-                                            </div>
-                                            <div className="comment-body">
-                                                <h3>Chris Meyer</h3>
-                                                <div className="meta">
-                                                    January 9, 2018 at 2:21pm
-                                                </div>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet,
-                                                    consectetur adipisicing
-                                                    elit. Pariatur quidem
-                                                    laborum necessitatibus,
-                                                    ipsam impedit vitae autem,
-                                                    eum officia, fugiat saepe
-                                                    enim sapiente iste iure!
-                                                    Quam voluptas earum impedit
-                                                    necessitatibus, nihil?
-                                                </p>
-                                                <p>
-                                                    <a
-                                                        href="#"
-                                                        className="reply"
-                                                    >
-                                                        Reply
-                                                    </a>
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
 
-                                    {/* END comment-list */}
-                                    <div className="comment-form-wrap pt-5">
-                                        <h3 className="mb-5">
-                                            Leave a comment
-                                        </h3>
-                                        <form action="#" className="">
-                                            <div className="mb-3">
-                                                <label htmlFor="name">
-                                                    Name *
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    id="name"
-                                                />
-                                            </div>
-                                            <div className="mb-3">
-                                                <label htmlFor="email">
-                                                    Email *
-                                                </label>
-                                                <input
-                                                    type="email"
-                                                    className="form-control"
-                                                    id="email"
-                                                />
-                                            </div>
-                                            <div className="mb-3">
-                                                <label htmlFor="website">
-                                                    Website
-                                                </label>
-                                                <input
-                                                    type="url"
-                                                    className="form-control"
-                                                    id="website"
-                                                />
-                                            </div>
-                                            <div className="mb-3">
-                                                <label htmlFor="message">
-                                                    Message
-                                                </label>
-                                                <textarea
-                                                    name=""
-                                                    id="message"
-                                                    cols={30}
-                                                    rows={10}
-                                                    className="form-control"
-                                                    defaultValue={""}
-                                                />
-                                            </div>
-                                            <div className="mb-3">
-                                                <input
-                                                    type="submit"
-                                                    defaultValue="Post Comment"
-                                                    className="btn btn-primary btn-md text-white"
-                                                />
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                             </div>
                             <div className="col-md-4 sidebar">
+                                
                                 <div className="sidebar-box">
-                                    <form action="#" className="search-form">
-                                        <div className="form-group">
-                                            <span className="icon fa fa-search" />
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                placeholder="Type a keyword and hit enter"
-                                            />
-                                        </div>
-                                    </form>
-                                </div>
-                                <div className="sidebar-box">
-                                    <div className="categories">
+                                    {/* <div className="categories">
                                         <h3>Categories</h3>
                                         <li>
                                             <a href="#">
@@ -229,7 +87,7 @@ export default function Details(props) {
                                                 <span>(14)</span>
                                             </a>
                                         </li>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="sidebar-box">
                                     <img

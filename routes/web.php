@@ -4,17 +4,25 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LangController;
+use App\Http\Controllers\EventController;
+
+
 
 
 
 use App\Models\Service;
 use App\Models\Blog;
 use App\Models\Contact;
+use App\Models\Event;
+
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Redirect;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +37,8 @@ use Illuminate\Support\Facades\App;
 
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
-    Route::get('/lang/{lang}', function ($lang) {
-        session(['locale' => $lang]);
-        App::setLocale('fr');
-        return redirect('/');
-      })->middleware('web')->name('lang.switch');
-
+   
+    Route::get('/lang/{locale}', [LangController::class, 'changeLang']);
     Route::get('/', function () {
         $blog = DB::table('blogs')->orderBy('created_at', 'desc')->limit(4)->get();
         $service = DB::table('services')->orderBy('created_at', 'desc')->limit(4)->get();
@@ -46,8 +50,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
             'services' => $service,
             'blog' => $blog,
             'contact' => Contact::all(),
+            'events' => Event::all(),
         ]);
-        App::setLocale($locale);
     });
 
     Route::get('/details/{id}', function($id){
@@ -70,7 +74,11 @@ Route::get('/blogs', function(){
         'blog' => Blog::paginate(8),
     ]);
 });
-    
+
+Route::get('/formlink/{events}', function($event){
+    // dd($event);
+    return redirect()->to(`https://{$event}`);
+});
 
 // about page
 Route::get('/about', function(){
@@ -149,6 +157,16 @@ Route::middleware('auth')->group(function () {
         ]);
     });
     Route::post('/contact/{id}', [ContactController::class, 'update'])->name('contact.update');
+
+    Route::post('/event/{id}', [EventController::class, 'update'])->name('event.update');
+
+
+    Route::get('/event/{id}', function($id){
+        $event = Event::find($id);
+        return Inertia::render('Events',[
+            'events' => $event,
+        ]);
+    });
 
 });
 

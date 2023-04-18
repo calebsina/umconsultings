@@ -59,10 +59,10 @@ export default function Navbar(props) {
                                     </select> */}
                                     
                                     <li className="has-children">
-                                        <Link href="/lang/en">English</Link>
+                                        <Link href={`/${lang}/lang/fr`}>English</Link>
                                         <ul className="dropdown">
                                             <li>
-                                                <Link href="/lang/fr">Francais</Link>
+                                            <Link href={`/${lang}/lang/fr`}>Francais</Link>
                                             </li>
                                         </ul>
                                     </li>

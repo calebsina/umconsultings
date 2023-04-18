@@ -292,20 +292,19 @@ export default function Dashboard(props) {
                                     <table className="table">
                                         <thead>
                                             <tr>
-                                                <th>Title</th>
-                                                <th>Author.</th>
-                                                <th>CreatedOn</th>
+                                                {/* <th>Name</th> */}
+                                                <th>Location.</th>
+                                                <th>Time</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             {props.events.map((item) => (
                                                 <tr key={item.id}>
-                                                    <td>item.title</td>
-                                                    <td>{item.author}</td>
-                                                    <td>{item.publishedOn}</td>
+                                                    <td>{item.location}</td>
+                                                    <td>{item.time}</td>
                                                     <td>
-                                                        <Link href="#">
+                                                        <Link href={`/event/${item.id}`}>
                                                             <label className="badge badge-danger">
                                                                 Edit
                                                             </label>
@@ -348,7 +347,7 @@ export default function Dashboard(props) {
                                                     <td className="py-1">
                                                         {item.id}
                                                     </td>
-                                                    <td> item.en_title</td>
+                                                    <td> {item.en_title}</td>
                                                     <td>
                                                         <Link
                                                             preserveScroll
