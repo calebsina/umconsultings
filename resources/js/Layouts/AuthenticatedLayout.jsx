@@ -368,7 +368,7 @@ export default function Authenticated({ auth, header, children }) {
                             </li>
                      
                             <li className="nav-item">
-                                <Link className="nav-link" href="#">
+                                <Link className="nav-link" href="/question">
                                     <span className="icon-bg">
                                         <i className="mdi mdi-cube menu-icon" />
                                     </span>
@@ -435,20 +435,21 @@ export default function Authenticated({ auth, header, children }) {
                             </li>
                             <li className="nav-item sidebar-user-actions">
                                 <div className="sidebar-user-menu">
-                                    <Link href="#" className="nav-link">
+                                    <Link href="/register" className="nav-link">
                                         <i className="mdi mdi-settings menu-icon" />
                                         <span className="menu-title">
-                                            Settings
+                                            Create admin
                                         </span>
                                     </Link>
+                                   
                                 </div>
                             </li>
                             <li className="nav-item sidebar-user-actions">
                                 <div className="sidebar-user-menu">
-                                    <Link href="#" className="nav-link">
+                                    <Link href={route('profile.edit')} className="nav-link">
                                         <i className="mdi mdi-speedometer menu-icon" />
                                         <span className="menu-title">
-                                            Take Tour
+                                        Edit Profile
                                         </span>
                                     </Link>
                                 </div>

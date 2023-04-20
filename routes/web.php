@@ -6,6 +6,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LangController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\FrequentlyAskedController;
+
 
 
 
@@ -15,6 +17,8 @@ use App\Models\Service;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Event;
+use App\Models\Frequentlyasked;
+
 
 
 use Illuminate\Foundation\Application;
@@ -35,10 +39,13 @@ use Illuminate\Support\Facades\Redirect;
 |
 */
 
-
+// localization middle ware
 Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
    
+    // language routes
     Route::get('/lang/{locale}', [LangController::class, 'changeLang']);
+
+    // home pag route
     Route::get('/', function () {
         $blog = DB::table('blogs')->orderBy('created_at', 'desc')->limit(4)->get();
         $service = DB::table('services')->orderBy('created_at', 'desc')->limit(4)->get();
@@ -51,9 +58,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
             'blog' => $blog,
             'contact' => Contact::all(),
             'events' => Event::all(),
+            'asked' => Frequentlyasked::all(),
         ]);
     });
 
+    // details route for blog
     Route::get('/details/{id}', function($id){
         $details = Blog::find($id);
         return Inertia::render('Details',[
@@ -103,6 +112,8 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard',[
         'blog' => Blog::paginate(4),
         'service' => Service::paginate(4),
+        'asked' => Frequentlyasked::paginate(4),
+
         'events' => $events,
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -146,6 +157,24 @@ Route::middleware('auth')->group(function () {
     Route::post('/adminservices', [ServiceController::class, 'store'])->name('service.store');
     Route::post('/adminservice/{id}', [ServiceController::class, 'update'])->name('service.update');
     Route::delete('/adminservice/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
+
+    // frequently asked questions routes
+
+    Route::get('/question', function(){
+        return Inertia::render('AddQuestion');
+    });
+
+    Route::get('/question/{id}', function($id){
+        $question = Frequentlyasked::find($id);
+        return Inertia::render('EditQuestion',[
+            'question' => $question,
+        ]);
+    });
+
+    Route::post('/question', [FrequentlyAskedController::class, 'store'])->name('question.store');
+    Route::post('/question/{id}', [FrequentlyAskedController::class, 'update'])->name('question.update');
+    Route::delete('/question/{id}', [FrequentlyAskedController::class, 'destroy'])->name('question.destroy');
+    
 
 
     // contact page routes

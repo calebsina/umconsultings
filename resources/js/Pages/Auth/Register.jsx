@@ -1,18 +1,21 @@
 import { useEffect } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
+// import GuestLayout from '@/Layouts/GuestLayout';
+import Authenticated from "@/Layouts/AuthenticatedLayout";
+
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
 
-export default function Register() {
+export default function Register(props) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
         password: '',
         password_confirmation: '',
     });
+
 
     useEffect(() => {
         return () => {
@@ -31,7 +34,14 @@ export default function Register() {
     };
 
     return (
-        <GuestLayout>
+        <Authenticated
+          auth={props.auth}
+                errors={props.errors}
+                header={
+                    <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                        Dashboard
+                    </h2>
+                }>
             <Head title="Register" />
 
             <form onSubmit={submit}>
@@ -116,6 +126,6 @@ export default function Register() {
                     </PrimaryButton>
                 </div>
             </form>
-        </GuestLayout>
+        </Authenticated>
     );
 }

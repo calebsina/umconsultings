@@ -315,14 +315,85 @@ export default function Dashboard(props) {
                                         </tbody>
                                     </table>
                                 </div>
-                                <button
+                                {/* <button
                                     type="button"
                                     className="btn btn-dark btn-rounded btn-fw"
                                 >
                                     View All
-                                </button>
+                                </button> */}
                             </div>
                         </div>
+                        <div className="col-lg-12 grid-margin stretch-card">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h4 className="card-title">
+                                        Frequently asked
+                                    </h4>
+                                    <p className="card-description">
+                                        {" "}
+                                        Add class <code>.table-striped</code>
+                                    </p>
+                                    <table className="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th> Id </th>
+                                                <th>Question </th>
+                                                {/* <th> Action </th> */}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {props.asked.data.map((item) => (
+                                                <tr key={item.id}>
+                                                    <td className="py-1">
+                                                        {item.id}
+                                                    </td>
+                                                    <td> {item.en_question}</td>
+                                                    <td>
+                                                        <Link
+                                                            preserveScroll
+                                                            as="button"
+                                                            className="btn btn-gradient-dark btn-icon-text"
+                                                            href={`/question/${item.id}`}
+                                                        >
+                                                            Edit{" "}
+                                                            <i className="mdi mdi-file-check btn-icon-append"></i>
+                                                        </Link>
+                                                        <Link
+                                                            preserveScroll
+                                                            className="btn btn-success btn-icon-text"
+                                                            method="delete"
+                                                            as="button"
+                                                            href={`/question/${item.id}`}
+                                                        >
+                                                            <i className="mdi mdi-alert btn-icon-prepend"></i>{" "}
+                                                            Delete
+                                                        </Link>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                    <div
+                                        className="btn-group"
+                                        role="group"
+                                        aria-label="Basic example"
+                                    >
+                                        {props.asked.links.map((items) => (
+                                            <Link
+                                                preserveScroll
+                                                as="button"
+                                                key={items.label}
+                                                href={items.url}
+                                                className="btn btn-outline-secondary"
+                                            >
+                                                {items.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Admin services section edit update delete */}
                         <div className="col-lg-12 grid-margin stretch-card">
                             <div className="card">
                                 <div className="card-body">
@@ -373,6 +444,7 @@ export default function Dashboard(props) {
                                             ))}
                                         </tbody>
                                     </table>
+                                    {/* paginator */}
                                     <div
                                         className="btn-group"
                                         role="group"

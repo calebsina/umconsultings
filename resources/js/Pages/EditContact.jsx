@@ -190,6 +190,9 @@ export default function EditContact(props) {
                                             >
                                                 Submit
                                             </button>
+                                            <button className="btn btn-light">
+                                                Cancel
+                                            </button>
 
                                             </form>
                                 </div>

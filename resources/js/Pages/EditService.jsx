@@ -165,6 +165,9 @@ export default function EditService(props) {
                                             >
                                                 Submit
                                             </button>
+                                            <button className="btn btn-light">
+                                                Cancel
+                                            </button>
 
                                             </form>
                                 </div>

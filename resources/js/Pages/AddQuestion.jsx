@@ -1,18 +1,17 @@
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Head, useForm, Link } from "@inertiajs/react";
-export default function Events(props) {
+export default function AddQuestion(props) {
     const { data, setData, post, processing, errors } = useForm({
-        id: props.events.id,
-        event_name: props.events.event_name,
-        location: props.events.location,
-        time: props.events.time,
-        form_link: props.events.form_link,
+        en_question: "",
+        fr_question: "",
+        en_answer: "",
+        fr_answer: "",
         remember: false,
     });
 
     function submit(e) {
         e.preventDefault();
-        post(`/event/${data.id}`);
+        post("/question");
     }
     return (
         <>
@@ -31,102 +30,104 @@ export default function Events(props) {
                             <div className="card">
                                 <div className="card-body">
                                     <h4 className="card-title">
-                                        Update Events
+                                        Frequently Asked Questions
                                     </h4>
                                     <p className="card-description">
                                         {" "}
-                                        Contact form{" "}
+                                        English Post{" "}
                                     </p>
                                     <form
                                             className="forms-sample"
                                             onSubmit={submit}
                                         >
                                             <div className="form-group">
-                                                <label htmlFor="event_name">
-                                                Name of Event
+                                                <label htmlFor="en_question">
+                                                   English Question
                                                 </label>
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    id="event_name"
-                                                    placeholder="event_name"
-                                                    name="event_name"
-                                                    value={data.event_name}
+                                                    id="en_question"
+                                                    placeholder="English Question"
+                                                    name="en_question"
+                                                    value={data.en_question}
                                                     onChange={(e) =>
                                                         setData(
-                                                            "event_name",
+                                                            "en_question",
                                                             e.target.value
                                                         )
                                                     }
                                                 />
-                                                {errors.event_name && (
-                                                    <div>{errors.event_name}</div>
+                                                {errors.en_question && (
+                                                    <div>{errors.en_question}</div>
                                                 )}
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="Location">
-                                                   Location
+                                                <label htmlFor="fr_question">
+                                                   French Question
                                                 </label>
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    id="Location"
-                                                    placeholder="Location"
-                                                    name="location"
-                                                    value={data.location}
+                                                    id="fr_question"
+                                                    placeholder="french Question"
+                                                    name="fr_question"
+                                                    value={data.fr_question}
                                                     onChange={(e) =>
                                                         setData(
-                                                            "location",
+                                                            "fr_question",
                                                             e.target.value
                                                         )
                                                     }
                                                 />
-                                                {errors.location && (
-                                                    <div>{errors.location}</div>
+                                                {errors.fr_title && (
+                                                    <div>{errors.fr_title}</div>
                                                 )}
                                             </div>
+
                                             <div className="form-group">
-                                                <label htmlFor="time">
-                                                   Time
+                                                <label htmlFor="en_answer">
+                                                   English Answer
                                                 </label>
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    id="time"
-                                                    placeholder="time"
-                                                    name="time"
-                                                    value={data.time}
+                                                    id="en_answer"
+                                                    placeholder="English Answer"
+                                                    name="en_answer"
+                                                    value={data.en_des}
                                                     onChange={(e) =>
                                                         setData(
-                                                            "time",
+                                                            "en_answer",
                                                             e.target.value
                                                         )
                                                     }
                                                 />
-                                                {errors.time && (
-                                                    <div>{errors.time}</div>
+                                                {errors.en_answer && (
+                                                    <div>{errors.en_answer}</div>
                                                 )}
                                             </div>
+
                                             <div className="form-group">
-                                                <label htmlFor="form_link">
-                                                   Form Link
+                                                <label htmlFor="fr_answer">
+                                                   French Answer
                                                 </label>
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    id="form_link"
-                                                    placeholder="Form Link"
-                                                    name="form_link"
-                                                    value={data.form_link}
+                                                    id="fr_answer"
+                                                    placeholder="French Answer"
+                                                    name="fr_answer"
+                                                    value={data.fr_answer}
                                                     onChange={(e) =>
                                                         setData(
-                                                            "form_link",
+                                                            "fr_answer",
                                                             e.target.value
                                                         )
                                                     }
                                                 />
-                                                {errors.form_link && (
-                                                    <div>{errors.form_link}</div>
+                                                {errors.fr_answer && (
+                                                    <div>{errors.fr_answer}</div>
                                                 )}
                                             </div>
 
@@ -137,9 +138,6 @@ export default function Events(props) {
                                                 disabled={processing}
                                             >
                                                 Submit
-                                            </button>
-                                            <button className="btn btn-light">
-                                                Cancel
                                             </button>
 
                                             </form>
