@@ -71,7 +71,7 @@ export default function Blog(props) {
                                         <Link href={`/details/${item.id}`}>
                                         <img
                                          style={{height: "250px", width: "350px"}}
-                                             src={(`http://127.0.0.1:8000/storage/${item.img_url}`)}
+                                             src={(`http://umconsultings.com/storage/${item.img_url}`)}
                                              alt="Image"
                                              className="img-fluid"
                                          />
