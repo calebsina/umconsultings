@@ -47,6 +47,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 
     // home pag route
     Route::get('/', function () {
+        
         $blog = DB::table('blogs')->orderBy('created_at', 'desc')->limit(4)->get();
         $service = DB::table('services')->orderBy('created_at', 'desc')->limit(4)->get();
         return Inertia::render('Welcome', [
@@ -170,6 +171,7 @@ Route::middleware('auth')->group(function () {
             'question' => $question,
         ]);
     });
+
 
     Route::post('/question', [FrequentlyAskedController::class, 'store'])->name('question.store');
     Route::post('/question/{id}', [FrequentlyAskedController::class, 'update'])->name('question.update');

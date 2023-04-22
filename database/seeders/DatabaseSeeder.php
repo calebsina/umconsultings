@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,18 +16,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(05)->create();
-        \App\Models\Service::factory(9)->create();
-        \App\Models\Blog::factory(9)->create();
+        // \App\Models\User::factory(05)->create();
+        // \App\Models\Service::factory(9)->create();
+        // \App\Models\Blog::factory(9)->create();
 
-        \App\Models\Service::factory(9)->create();
-        \App\Models\Event::factory(3)->create();
-        \App\Models\Frequentlyasked::factory(5)->create();
-        \App\Models\Notification::factory(9)->create();
-
-
+        // \App\Models\Service::factory(9)->create();
+        // \App\Models\Event::factory(3)->create();
+        // \App\Models\Frequentlyasked::factory(5)->create();
+        // \App\Models\Notification::factory(9)->create();
 
 
+
+        \App\Models\Contact::factory()->create([
+            'contact_1' =>'Bamenda, Commercial Avenue',
+            'contact_2' => '+237 679 646 336',
+            'email' => 'info@umconsultings.com',
+            'fbk' => 'facebook.com',
+            'ins' => 'instagram.com',
+            'lkn' =>  'linkendin.com',          
+        ]);
+
+        \App\Models\Event::factory()->create([
+            'event_name' =>'Bamenda, Commercial Avenue',
+            'location' => '+237 679 646 336',
+            'time' => 'info@umconsultings.com',
+            'form_link' => 'facebook.com',          
+        ]);
 
 
 

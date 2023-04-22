@@ -39,18 +39,18 @@ export default function Navbar(props) {
                             <div className="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
                                 <ul className="js-clone-nav  text-center site-menu p-0 m-0">
                                     <li>
-                                        <Link href={`/${lang}/`} >{local ? 'Acceuil' : 'Home'}</Link>
+                                        <Link href="/" >{local ? 'Acceuil' : 'Home'}</Link>
                                     </li>
                                     <li>
-                                        <Link href={`/${lang}/about`}>{local ? 'À propos' : 'About Us'}</Link>
+                                        <Link href="/about">{local ? 'À propos' : 'About Us'}</Link>
                                     </li>
                                     <li >
-                                        <Link href={`/${lang}/services`}>
+                                        <Link href="/services">
                                         {local ? 'services' : 'services'}
                                         </Link>
                                     </li>
                                     <li >
-                                        <Link href={`/${lang}/blogs`}>{local ? 'Blog' : 'Blog'}</Link>
+                                        <Link href="/blogs">{local ? 'Blog' : 'Blog'}</Link>
                                     </li>
 
                                     {/* <select className="has-children">
@@ -59,10 +59,10 @@ export default function Navbar(props) {
                                     </select> */}
                                     
                                     <li className="has-children">
-                                        <Link href={`/${lang}/lang/fr`}>English</Link>
+                                        <Link href="/lang/en">English</Link>
                                         <ul className="dropdown">
                                             <li>
-                                            <Link href={`/${lang}/lang/fr`}>Francais</Link>
+                                            <Link href="/lang/fr">Francais</Link>
                                             </li>
                                         </ul>
                                     </li>
