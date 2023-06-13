@@ -230,7 +230,7 @@ export default function Dashboard(props) {
                                                     <td>
                                                         <Link
                                                             as="button"
-                                                            className="btn btn-gradient-dark btn-icon-text"
+                                                            className="btn btn-danger btn-icon-text"
                                                             href={`/adminblog/${item.id}`}
                                                         >
                                                             Edit{" "}
@@ -352,7 +352,7 @@ export default function Dashboard(props) {
                                                         <Link
                                                             preserveScroll
                                                             as="button"
-                                                            className="btn btn-gradient-dark btn-icon-text"
+                                                            className="btn btn-danger btn-icon-text"
                                                             href={`/question/${item.id}`}
                                                         >
                                                             Edit{" "}
@@ -423,7 +423,7 @@ export default function Dashboard(props) {
                                                         <Link
                                                             preserveScroll
                                                             as="button"
-                                                            className="btn btn-gradient-dark btn-icon-text"
+                                                            className="btn btn-danger btn-icon-text"
                                                             href={`/adminservice/${item.id}`}
                                                         >
                                                             Edit{" "}

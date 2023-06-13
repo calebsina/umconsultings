@@ -40,10 +40,19 @@ use Illuminate\Support\Facades\Redirect;
 */
 
 // localization middle ware
-Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
+Route::group(['prefix' => LaravelLocalization::setLocale(Session::get('locale'))], function(){
    
     // language routes
-    Route::get('/lang/{locale}', [LangController::class, 'changeLang']);
+    // Route::get('/lang/{locale}', [LangController::class, 'changeLang']);
+
+    Route::get('language/{locale}', function ($locale) {
+        App::setLocale($locale);
+        $session = session();
+        $session->put('locale', $locale);
+        // dd($session->get('locale'));
+
+        return redirect()->to("/$locale");
+    });
 
     // home pag route
     Route::get('/', function () {
@@ -72,36 +81,37 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     });
 
     // contact
-Route::get('/contact', function(){
-    return Inertia::render('Contact',[
-        'contact' => Contact::all(),
-    ]);
-});
+    Route::get('/contact', function(){
+        return Inertia::render('Contact',[
+            'contact' => Contact::all(),
+        ]);
+    });
 
-// blog
-Route::get('/blogs', function(){
-    return Inertia::render('Blog',[
-        'blog' => Blog::paginate(8),
-    ]);
-});
+    // blog
+    Route::get('/blogs', function(){
+        return Inertia::render('Blog',[
+            'blog' => Blog::paginate(8),
+        ]);
+    });
 
-Route::get('/formlink/{events}', function($event){
-    // dd($event);
-    return redirect()->to(`https://{$event}`);
-});
+    Route::get('/formlink/{events}', function($event){
+        // dd($event);
+        return redirect()->to(`https://{$event}`);
+    });
 
-// about page
-Route::get('/about', function(){
-    return Inertia::render('About');
-});
+    // about page
+    Route::get('/about', function(){
+        // dd(locale);
+        return Inertia::render('About');
+    });
 
-// services
-Route::get('/services', function(){
-    return Inertia::render('Services',[
-        'services' => Service::all(),
+    // services
+    Route::get('/services', function(){
+        return Inertia::render('Services',[
+            'services' => Service::all(),
 
-    ]);
-});
+        ]);
+    });
 
 
 });

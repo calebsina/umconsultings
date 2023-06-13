@@ -11,10 +11,11 @@ import { Link, Head, usePage } from "@inertiajs/react";
 import Guest from "@/Layouts/GuestLayout";
 
 export default function Welcome(props) {
-    const local = usePage().props.locale === 'fr';
+    const local = usePage().props.locale == 'fr';
 
 
     return (
+        
         <>
             <Guest>
                 <Head title="U&M Consulting" />

@@ -11,8 +11,8 @@ import { Link, usePage } from "@inertiajs/react";
 // const { url } = usePage();
 export default function Navbar(props) {
 
-    const local = usePage().props.locale === 'fr';
-    const lang = usePage().props.locale;
+    const local = usePage().props.locale;
+    // const lang = usePage().props.locale;
 
     return (
         <>
@@ -39,18 +39,18 @@ export default function Navbar(props) {
                             <div className="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
                                 <ul className="js-clone-nav  text-center site-menu p-0 m-0">
                                     <li>
-                                        <Link href="/" >{local ? 'Acceuil' : 'Home'}</Link>
+                                        <Link href={local == 'fr' ? '/fr' : '/'} >{local == 'fr' ? 'Acceuil' : 'Home'}</Link>
                                     </li>
                                     <li>
-                                        <Link href="/about">{local ? 'À propos' : 'About Us'}</Link>
+                                        <Link href={local == 'fr' ? '/fr/about' : '/about'}>{local == 'fr' ? 'À propos' : 'About Us'}</Link>
                                     </li>
                                     <li >
-                                        <Link href="/services">
-                                        {local ? 'services' : 'services'}
+                                        <Link href={local == 'fr' ? '/fr/services' : '/services'}>
+                                        {local == 'fr' ? 'services' : 'services'}
                                         </Link>
                                     </li>
                                     <li >
-                                        <Link href="/blogs">{local ? 'Blog' : 'Blog'}</Link>
+                                        <Link href={local =='fr' ? '/fr/blogs' : '/blogs'}>{local == 'fr' ? 'Blog' : 'Blog'}</Link>
                                     </li>
 
                                     {/* <select className="has-children">
@@ -59,10 +59,10 @@ export default function Navbar(props) {
                                     </select> */}
                                     
                                     <li className="has-children">
-                                        <Link href="/lang/en">English</Link>
+                                        <Link href="/language/en">English</Link>
                                         <ul className="dropdown">
                                             <li>
-                                            <Link href="/lang/fr">Francais</Link>
+                                            <Link href="/language/fr">Francais</Link>
                                             </li>
                                         </ul>
                                     </li>
@@ -72,8 +72,8 @@ export default function Navbar(props) {
                             <div className="col-6 col-lg-3 text-lg-end">
                                 <ul className="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
                                     <li className="cta-button">
-                                        <Link href={`/${lang}/contact`}>
-                                            Contact Us
+                                        <Link href={local == 'fr' ? '/fr/contact' : '/contact'}>
+                                            {local == 'fr' ? 'Contactez-nous' : 'Contact Us'}
                                         </Link>
                                     </li>
                                 </ul>

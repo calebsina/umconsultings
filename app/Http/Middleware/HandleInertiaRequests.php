@@ -8,6 +8,8 @@ use Inertia\Middleware;
 use Illuminate\Support\Facades\App;
 
 use Tightenco\Ziggy\Ziggy;
+use Illuminate\Support\Facades\Session;
+
 
 class HandleInertiaRequests extends Middleware
 {
@@ -55,7 +57,7 @@ class HandleInertiaRequests extends Middleware
                 'quest' => trans('quest'),
                 'read' => trans('read')
             ],
-            'locale' => App::getLocale(),
+            'locale' => Session::get('locale'),
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
                     'location' => $request->url(),
