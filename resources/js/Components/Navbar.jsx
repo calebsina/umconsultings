@@ -70,7 +70,7 @@ export default function Navbar(props) {
                             </div>
 
                             <div className="col-6 col-lg-3 text-lg-end">
-                                <ul className="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
+                                <ul className="js-clone-nav d-none d-lg-inline-block text-end site-menu">
                                     <li className="cta-button">
                                         <Link href={local == 'fr' ? '/fr/contact' : '/contact'}>
                                             {local == 'fr' ? 'Contactez-nous' : 'Contact Us'}
