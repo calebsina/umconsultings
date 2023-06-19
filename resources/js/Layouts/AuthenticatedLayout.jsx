@@ -373,7 +373,7 @@ export default function Authenticated({ auth, header, children }) {
                                         <i className="mdi mdi-cube menu-icon" />
                                     </span>
                                     <span className="menu-title">
-                                    frequently asked
+                                    Frequently Asked
                                     </span>
                                 </Link>
                             </li>

@@ -181,6 +181,53 @@ export default function EditContact(props) {
                                                 )}
                                             </div>
 
+                                            
+                                            <div className="form-group">
+                                                <label htmlFor="tkt">
+                                                   TIKtok
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="lkn"
+                                                    placeholder="Tiktok"
+                                                    // name="lkn"
+                                                    // value={data.lkn}
+                                                    // onChange={(e) =>
+                                                    //     setData(
+                                                    //         "lkn",
+                                                    //         e.target.value
+                                                    //     )
+                                                    // }
+                                                />
+                                                {/* {errors.lkn && (
+                                                    <div>{errors.lkn}</div>
+                                                )} */}
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label htmlFor="twt">
+                                                   Twitter
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="twt"
+                                                    placeholder="Twitter"
+                                                    // name="lkn"
+                                                    // value={data.lkn}
+                                                    // onChange={(e) =>
+                                                    //     setData(
+                                                    //         "lkn",
+                                                    //         e.target.value
+                                                    //     )
+                                                    // }
+                                                />
+                                                {/* {errors.lkn && (
+                                                    <div>{errors.lkn}</div>
+                                                )} */}
+                                            </div>
+
 
                                             <button
                                                

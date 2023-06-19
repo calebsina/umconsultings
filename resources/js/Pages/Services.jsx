@@ -54,9 +54,9 @@ export default function Services(props) {
                                     data-aos="fade-up"
                                 >
                                     <h2>
-                                        Our{" "}
+                                        
                                         <span className="d-block">
-                                            Services
+                                            {props.translations.services}
                                         </span>
                                     </h2>
                                     <p>
@@ -71,7 +71,7 @@ export default function Services(props) {
                                             href="/service"
                                             className="btn btn-primary"
                                         >
-                                            View All
+                                            {props.translations.read}
                                         </Link>
                                     </p>
                                 </div>

@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\Redirect;
 */
 
 // localization middle ware
-Route::group(['prefix' => LaravelLocalization::setLocale(Session::get('locale'))], function(){
+Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
    
     // language routes
     // Route::get('/lang/{locale}', [LangController::class, 'changeLang']);

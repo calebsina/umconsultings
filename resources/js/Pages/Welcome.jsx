@@ -136,7 +136,7 @@ export default function Welcome(props) {
                                             href="/services"
                                             className="btn btn-primary"
                                         >
-                                            View All
+                                            {props.translations.read}
                                         </Link>
                                     </p>
                                 </div>
@@ -232,7 +232,7 @@ export default function Welcome(props) {
                                 data-aos="fade-up"
                                 data-aos-delay={0}
                             >
-                                <h2 className="heading mb-5">Recent Posts</h2>
+                                <h2 className="heading mb-5">{local ? "Post Recent" : "Recent Posts"}</h2>
                             </div>
                         </div>
                         <div className="row align-items-stretch">

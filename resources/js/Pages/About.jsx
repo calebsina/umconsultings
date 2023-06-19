@@ -4,10 +4,11 @@ import img_v_2 from "../styles/images/img_v_2.jpg";
 import person_2 from "../styles/images/person_sq_1.jpg";
 import person_3 from "../styles/images/person_sq_2.jpg";
 
-import { Link, Head } from "@inertiajs/react";
+import { Link, Head, usePage } from "@inertiajs/react";
 import Guest from "@/Layouts/GuestLayout";
 
 export default function About(props) {
+    const local = usePage().props.locale == "fr";    
     return (
         <>
             <Guest>
@@ -19,7 +20,7 @@ export default function About(props) {
                         <div className="row align-items-center justify-content-start">
                             <div className="col-lg-5">
                                 <h1 className="heading" data-aos="fade-up">
-                                    About Us
+                                    {props.translations.about}    
                                 </h1>
                                 <p className="mb-5" data-aos="fade-up">
                                     {props.translations.about_us}
